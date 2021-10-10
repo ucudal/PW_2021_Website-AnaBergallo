@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Curriculum Vitae Ana Laura Bergallo</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="src/style.css">
         <script src="https://kit.fontawesome.com/bf57baba58.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-grey-100 dark:bg-gray-800 md:container md:mx-auto">   <!-- only this can be displayed -->
@@ -25,7 +25,7 @@
         </header>
 
         <main class="text-sm md:xl md:flex-row flex flex-col md:space-x-5 bg-red-100 p-2">
-            <section class="md:w-1/3 w-screen">
+            <div class="md:w-1/3 w-screen">
                 <div class="flex-col items-center bg-grey-100"> 
                     <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
                         <h3><b><u>About me</u></b></h3>
@@ -42,25 +42,34 @@
                         <h3><b><u>Contact and address</u></b></h3>
                     </div>
                     <div class="rounded-b-lg bg-gray-100 md:p-4 md:mt-0 md:m-2 m-1 p-2">
-                        <div>
-                            <ul>
-                                <li><p><span class="fas fa-mobile-alt"> </span> (+598) 93 745 896</p></li>
-                                <li><p><span class="fas fa-envelope"> </span> anita.bergallo@gmail.com</p></li>
-                                <li><p><span class="fas fa-globe-africa"> </span> Uruguay</p></li>
-                            </ul>
-                        </div>
+                        <ul>
+                            <li><p><span class="fas fa-mobile-alt"> </span> (+598) 93 745 896</p></li>
+                            <li><p><span class="fas fa-envelope"> </span> anita.bergallo@gmail.com</p></li>
+                            <li><p><span class="fas fa-globe-africa"> </span> Uruguay</p></li>
+                        </ul>
                     </div>
                     <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
                         <h3><span class="far fa-comment"> </span> <b><u>Tell me about you!</u></b></h3>
                     </div>
                     <div class="rounded-b-lg bg-gray-100 md:p-4 md:mt-0 md:m-2 m-1 p-2">
                         <div>
-                            
+                            <form action="" id="form">
+                                <label for="name">Nombre Completo <span>*</span></label>
+                                <input name="name" required type="text" id="name" placeholder="Ingrese su nombre aquí">
+                                <br>
+                                <label for="email">Correo electrónico <span>*</span></label>
+                                <input name="email" type="email" id="email" required placeholder="example@domain.com">
+                                <br>
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
+                                <br>
+                                <button type="button" id="btn-enviarMensaje">Enviar mensaje</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="md:w-2/3 w-screen rounded-md">
+            </div>
+            <div class="md:w-2/3 w-screen rounded-md">
                 <div class="p-10% flex-col">
                     <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
                         <h2 class="font-mono text-lg pl-8">Education</h2>
@@ -118,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
 
         <footer>
@@ -126,6 +135,6 @@
                 Aca van las redes sociales
             </p>
         </footer>
-        
+        <script> src="js/main.js" </script>
     </body>
 </html>
