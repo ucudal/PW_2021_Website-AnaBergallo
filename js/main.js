@@ -1,8 +1,9 @@
-let btn = document.querySelector('#btn-enviarMensaje');
+const form1 = document.getElementById('form');
 
-btn.addEventListener('click', enviarMensaje);
+form1.addEventListener('submit', enviarMensaje);
 
-function enviarMensaje() {
-    alert("Mensaje enviado! ");
+function enviarMensaje(e) {
+    e.preventDefault();
     console.log('Mensaje enviado ok');
+    alert("Mensaje enviado! ");
 }
