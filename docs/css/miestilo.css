@@ -79,17 +79,31 @@ button {
 
 
 .form-imput {
+  display: block;
+  width: 100%;
+  font-size: 18px;
   padding: 20px;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.05);
   border: 1px solid #0000004d;
   margin-bottom: 40px;
 
 }
 
 .form-label {
-  padding-left: 15px;
-  position: absolute;
+  /* display: block; */
+  width: 100%;
+  font-size: 18px;
+  color: black;
+  padding-left: 3px;
+  /* position: absolute; */
+  background: transparent;
   margin-top: -85;
-  z-index: -20;
+  z-index: -60;
   margin-bottom: 40px;
+  transition: all
+ }
+
+ .form-imput:focus +
+ .form-label{
+  margin-top: -135;
  }
