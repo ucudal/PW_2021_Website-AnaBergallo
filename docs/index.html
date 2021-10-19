@@ -50,31 +50,34 @@
                             <li><p><span class="fas fa-envelope"> </span> anita.bergallo@gmail.com</p></li>
                             <li><p><span class="fas fa-globe-africa"> </span> Uruguay</p></li>
                         </ul>
+                        <br>
+                        <div>
+                            <button id="btn_open" class="mx-auto">
+                                <span class="far fa-comment"> </span> Contact me!
+                            </button>
+                        </div>
                     </div>
-                    
-                    <div class="mx-auto">
-                        <button id="btn_open">
-                            <span class="far fa-comment"> </span> Tell me about you!
-                        </button>
-                    </div>
-                    
                      
                     <div class="modal-container" id="modal_container">
                         <div class="modal">
-                            <button id="btn_close">Close</button>
-                            <form action="" id="form">
-                                <h1>Send me your comments :) </h1>
-                                <label for="name">Nombre Completo <span>*</span></label>
-                                <input name="name" required type="text" id="name" placeholder="Ingrese su nombre aquí">
-                                <br>
-                                <label for="email">Correo electrónico <span>*</span></label>
-                                <input name="email" type="email" id="email" required placeholder="example@domain.com">
-                                <br>
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" name="message" id="" cols="30" rows="10"></textarea>
-                                <br>
+                            <div id='modal_header' class="modal-header">
+                                <b><h1>Send me your comments :) </h1></b>
+                            </div>
+                                <form action="" id="form" >
+                                    
+                                    <label class='form-label' for="name">Nombre Completo <span>*</span></label>
+                                    <input class='form-imput' name="name" required type="text" id="name">
+                                   
+                                    <label class='form-label' for="email">Correo electrónico <span>*</span></label>
+                                    <input class='form-imput' name="email" type="email" id="email" required>
+                                    
+                                    <label class='form-label' for="message">Mensaje</label>
+                                    <textarea  class='form-imput' id="message" name="message" id="" cols="45" rows="10"></textarea>
+                                    
                                 <button id="btn-enviarMensaje">Enviar mensaje</button>
-                            </form>
+                                <button id="btn_close">Close</button>
+                                </form>
+                            
                         </div>
                     </div>
                 </div>
