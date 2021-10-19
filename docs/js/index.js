@@ -17,4 +17,6 @@ function hideModal() {
 }
 function fixFormulario(e) {
     e.preventDefault();
+    hideModal();
+    alert("Gracias por tu mensaje")
 }
