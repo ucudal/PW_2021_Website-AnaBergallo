@@ -3,3 +3,4 @@
 
 <!-- npm start -->
 <!-- npm run tailwind:watch -->
+<!-- npm run uglify -->

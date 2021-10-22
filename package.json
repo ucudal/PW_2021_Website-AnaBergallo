@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server --serveStatic 'docs' --files '**/*'",
-    "tailwind": "npx tailwindcss -i ./docs/css/tailwind.css -o ./docs/css/style.css",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/css/style.css --jit --minify",
     "tailwind:watch": "npm run tailwind -- --watch",
-    "uglify": "npx uglify src/script.js -o docs/script.min.js --source-map"
+    "uglify": "npx uglify-js ./docs/js/index.js -o ./docs/js/index.min.js --source-map"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
   "keywords": [],
   "dependencies": {
     "tailwindcss": "^2.2.17",
-    "tsc": "^2.0.3",
     "typescript": "^4.4.4",
     "uglify-js": "^3.14.2"
   },
