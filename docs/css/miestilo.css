@@ -33,6 +33,16 @@ button {
   padding: 10px 25px;
 }
 
+.btn-secondary {
+  background-color: lightseagreen;
+  margin: 5px;
+  /*border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 25px; */
+}
+
 .modal-container {
   display: flex;
   background-color: rgba(0, 0, 0, 0.3);
@@ -109,6 +119,27 @@ button {
   margin-top: -135;
  }
 
+ .form-imput2 {
+  display: block;
+  width: 50%;
+  font-size: 12px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #0000004d;
+  margin-bottom: 10px;
+}
+
+.form-label2 {
+  width: 50%;
+  font-size: 12px;
+  color: black;
+  padding-left: 3px;
+  background: transparent;
+  margin-top: -85;
+  z-index: -60;
+  margin-bottom: 40px;
+  transition: all
+ }
 
  @media (min-width: 768px) {
    .text-title{

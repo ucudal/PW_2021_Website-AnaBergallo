@@ -7,6 +7,7 @@
 
 <!-- to do: 
 HACER
+- terminar actividad ingreso de datos y consulta / preguntar si va
 - usar typescript
 - AJAX
 - pedir y guardar datos a usuario
