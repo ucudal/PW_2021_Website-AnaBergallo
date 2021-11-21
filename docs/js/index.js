@@ -8,27 +8,42 @@ const btn_other_info = document.getElementById('btn_other_info');
 const info_contenido = document.getElementById('info_contenido');
 const modal_container = document.getElementById('modal_container');
 const form = document.getElementById('form');
-const education_csv = 'education.csv';
-const experiencia_csv = 'experiencia.csv';
-const languages_csv = 'languages.csv';
-const skills_csv = 'skills.csv';
-const other_info_csv = 'other_info.csv';
+
+const education_csv = 'education';
+const experiencia = 'experiencia-laboral';
+const languages = 'languages';
+const skills = 'skills';
+const other_info = 'other_info';
+
+const api_url = 'https://PW2021-APINode-AnaBergallo.anabergallo.repl.co'
+const HTMLResponse = document.getElementById('info_contenido');
 
 btn_open.addEventListener('click', showModal);
 btn_close.addEventListener('click', hideModal);
-btn_education.addEventListener('click', getInfo(education_csv));
-btn_work_exp.addEventListener('click', getInfo(experiencia_csv));
-btn_skill.addEventListener('click', getInfo(skills_csv));
-btn_languages.addEventListener('click', getInfo(languages_csv));
-btn_other_info.addEventListener('click', getInfo(other_info_csv));
+// btn_education.addEventListener('click', getInfo(education_csv));
+btn_work_exp.addEventListener('click', getInfo(experiencia));
+btn_skill.addEventListener('click', getInfo(skills));
+// btn_languages.addEventListener('click', getInfo(languages_csv));
+// btn_other_info.addEventListener('click', getInfo(other_info_csv));
 form.addEventListener('submit', fixFormulario);
 
-function getInfo(csv_id) {
-    console.log(csv_id.text);
-    let ruta = '../csv/'+csv_id;
-    fetch(ruta).then(data => data.text()).then(data => {
-        info_contenido.innerHTML = `<p>${data}</p>`;
-    })
+
+function getInfo(endpoint) {
+    fetch(`${api_url}/${endpoint}`).then((response) => response.json()).then((data)=> {
+        let texto = '';
+        if (endpoint == 'experiencia-laboral') {
+            for (let row of data) {
+                texto += `<p> ${row.empresa} - ${row.puesto} - ${row.descripcion} - ${row.inicio} - ${row.fin}</p>`
+            }   
+        } else if (endpoint == 'skills') {
+            for (let row of data) {
+                texto += `<p> ${row.skills}</p>`
+            }  
+        }
+        
+        HTMLResponse.innerHTML = `${texto}`;
+    });
+
 };
 
 //to do
