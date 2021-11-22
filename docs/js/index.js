@@ -38,10 +38,12 @@ function sendInfo() {
     let name = nombre.texto;
     let doc = documento.texto;
     let mail = email.texto;
-    let data = {'nombreContacto':name, 'documento':doc, 'email': mail}; 
+    let data = {'nombreContacto': name, 'documento': doc, 'email': mail}; 
+    alert(data);
     fetch(`${api_url}/${save_user}`, {
         mode: 'cors',
-        credentials: 'include',
+        // credentials: 'include',
+        headers: new Headers({ "content-type": "application/json" }),
         method : 'POST',
         body: JSON.stringify(data),
     }).then((response) => response.json()).then((response)=> {
