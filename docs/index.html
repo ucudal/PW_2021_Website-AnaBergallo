@@ -64,24 +64,27 @@
                     <div class="rounded-3xl bg-gray-100 md:p-4 md:mt-0 md:m-2 m-1 p-2">
                         <div class="load-user"> 
                             <form id="form-user">
-                                <label class='form-label2' for="">Nombre </label>
-                                <input class='form-imput2' name="name-user" type="text" id="name-user" required>
+                                <label class='form-label2' for="nombreContacto">Nombre </label>
+                                <input class='form-imput2' name="nombreContacto" type="text" id="nombreContacto" required>
                                 
                                 <label class='form-label2' for="">Correo electrónico </label>
                                 <input class='form-imput2' name="email-user" type="email" id="email-user">
                                 
-                                <label class='form-label2' for="">Edad </label>
-                                <input class='form-imput2' name="age-user" id="age-user" required>
+                                <label class='form-label2' for="">Document </label>
+                                <input class='form-imput2' name="document-user" id="document-user" required>
+                                <div class="flex justify-center">
+                                    <button id="btn_save_user" class="btn-secondary">
+                                        <span class="fa-solid fa-user-plus"> </span> Save user
+                                    </button>
+                                </div>
                             </form>
+                            <div class="flex justify-center"></div>
+                                <button id="btn_print_users" class="btn-secondary">
+                                    <span class="fa-solid fa-user-plus"> </span> Print users
+                                </button>
+                            </div>
                         </div>
-                        <div class="flex justify-center">
-                            <button id="btn_sign_up" class="btn-secondary">
-                                <span class="fa-solid fa-user-plus"> </span> Sign up
-                            </button>
-                            <button id="btn_print_users" class="btn-secondary">
-                                <span class="fa-solid fa-user-plus"> </span> Print users
-                            </button>
-                        </div>
+                        
                             
                         </div>
                     </div>
@@ -104,8 +107,7 @@
                                     <textarea  class='form-imput' id="message" name="message" id="" cols="35" rows="5" required></textarea>
                                     
                                 <button id="btn-enviarMensaje">Enviar mensaje</button>
-                                <button id="btn_close">Close</button>
-                                </form>
+                                </form> <button id="btn_close">Close</button>
                             
                         </div>
                     </div>
