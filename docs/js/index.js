@@ -39,13 +39,11 @@ function sendInfo() {
     let doc = documento.texto;
     let mail = email.texto;
     let data = {'nombreContacto': name, 'documento': doc, 'email': mail}; 
-    alert(data);
     fetch(`${api_url}/${save_user}`, {
         mode: 'cors',
-        // credentials: 'include',
-        headers: new Headers({ "content-type": "application/json" }),
+        headers: new Headers({ "content-type": "application/json" , "Access-Control-Allow-Origin": "*"}),
         method : 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
     }).then((response) => response.json()).then((response)=> {
         console.log(response);
     }).catch(err => console.log('error ', err));
