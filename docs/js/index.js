@@ -23,6 +23,7 @@ const save_user = 'enviar-formulario';
 const api_url = 'https://PW2021-APINode-AnaBergallo.anabergallo.repl.co'
 const HTMLResponse = document.getElementById('info_contenido');
 
+
 btn_open.addEventListener('click', showModal);
 btn_close.addEventListener('click', hideModal);
 btn_education.addEventListener('click', function() {getInfo(education)});
@@ -57,31 +58,35 @@ function getInfo(endpoint) {
         headers: new Headers({ "content-type": "application/json" })
     }).then((response) => response.json()).then((data)=> {
         let texto = '';
+        let encabezado = ''; 
         if (endpoint == 'experiencia-laboral') {
-            console.log(data)
+            encabezado += `<h2 class="font-mono text-lg pl-8"><b>Expirience</b></h2>`;
             let experiencia = data['experiencia-laboral'];
             for (let row of experiencia) {
                 texto += `<p><b>${row.empresa}</b> - ${row.puesto} - ${row.descripcion} - ${row.inicio} - ${row.fin}</p>`
             }   
         } else if (endpoint == 'skills') {
+            encabezado += `<h2 class="font-mono text-lg pl-8"><b>Skills</b></h2>`;
             for (let row of data) {
                 texto += `<p><b>${row.name}:</b> ${row.description}</p>`
             }  
         } else if (endpoint == 'education') {
+            encabezado += `<h2 class="font-mono text-lg pl-8"><b>Education</b></h2>`;
             for (let row of data) {
                 texto += `<p><b>${row.name}</b> - ${row.institution} - ${row.description} - ${row.state}</p>`
             }   
         } else if (endpoint == 'languages') {
+            encabezado += `<h2 class="font-mono text-lg pl-8"><b>Languages</b></h2>`;
             for (let row of data) {
                 texto += `<p><b>${row.name}:</b> ${row.description}</p>`
             }   
         } else if (endpoint == 'other_info') {
+            encabezado += `<h2 class="font-mono text-lg pl-8"><b>Other info</b></h2>`;
             for (let row of data) {
                 texto += `<p><b>${row.name}:</b> ${row.description}</p>`
             }  
         }
-        
-        HTMLResponse.innerHTML = `${texto}`;
+        HTMLResponse.innerHTML = `${encabezado}</br>${texto}`;
     });
 
 };
