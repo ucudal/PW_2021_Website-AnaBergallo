@@ -9,25 +9,32 @@
         <link rel="stylesheet" href="css/miestilo.css" type="text/css">
         <script src="https://kit.fontawesome.com/bf57baba58.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-grey-100 dark:bg-gray-800 md:container md:mx-auto">   <!-- only this can be displayed -->
+    <body class="bg-grey-100 dark:bg-gray-800 md:container md:mx-auto"> 
         <header>
-            <p> Aca va algo ...arriba del todo</p>
+            <p>  </p>
         </header>
         <section id="section1">
-            <div class="rounded-lg flex space-x-12 p-8 items-center bg-purple-100">
+            <div class="rounded-t-lg flex space-x-12 p-8 items-center bg-purple-200">
                 <div>
                     <img src="img/my_photo.jpg" alt="Foto de Ana Bergallo"
-                    width="300" class="w-64 h-64  rounded-full">
+                    width="300" class="foto-1">
                 </div>
-                <div class="flex flex-col">
-                    <div>
-                        <p class="font-mono md:text-4xl text-lg pl-18">Ana Bergallo</h1>
+                <div>
+                    <div >
+                        <p class="text-title">Ana Bergallo</p>
+                    </br>
+                        <ul>
+                            <li><p><span class="fas fa-mobile-alt"> </span> (+598) 93 745 896</p></li>
+                            <li><p><span class="fas fa-envelope"> </span> anita.bergallo@gmail.com</p></li>
+                            <li><p><span class="fas fa-globe-africa"> </span> Uruguay</p></li>
+                        </ul>
                     </div>
                 </div>  
             </div>
         </section>
 
-        <main class="text-sm md:xl md:flex-row flex flex-col md:space-x-5 bg-purple-100 p-2">
+        <main class="text-m md:xl md:flex-row flex flex-col md:space-x-5 bg-purple-200 p-2 rounded-b-lg">
+            <!-- columna 1/3 -->
             <div class="md:w-1/3 w-screen">
                 <div class="flex-col items-center"> 
                     <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
@@ -41,30 +48,43 @@
                         something new and keep growing. 
                         </p>
                     </div>
-                    <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
-                        <h3><b><u>Contact and address</u></b></h3>
-                    </div>
-                    <div class="rounded-b-lg bg-gray-100 md:p-4 md:mt-0 md:m-2 m-1 p-2">
-                        <ul>
-                            <li><p><span class="fas fa-mobile-alt"> </span> (+598) 93 745 896</p></li>
-                            <li><p><span class="fas fa-envelope"> </span> anita.bergallo@gmail.com</p></li>
-                            <li><p><span class="fas fa-globe-africa"> </span> Uruguay</p></li>
-                        </ul>
-                        <br>
-                        <div>
-                            <button id="btn_open" class="mx-auto">
+                    
+                    <div class="rounded-lg bg-gray-100 md:px-20 md:mt-0 md:m-2 m-1 p-2">       
+                            <button id="btn_open" >
                                 <span class="far fa-comment"> </span> Contact me!
                             </button>
+                    </div>
+                    <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-grey-300">
+                        
+                    </div>
+                    <div class="rounded-3xl bg-gray-100 md:p-4 md:mt-0 md:m-2 m-1 p-2">
+                        <div class="load-user"> 
+                            <form id="form-user">
+                                <label class='form-label2' for="nombreContacto">Nombre </label>
+                                <input class='form-imput2' name="nombreContacto" type="text" id="nombreContacto" required>
+                                
+                                <label class='form-label2' for="">Correo electrónico </label>
+                                <input class='form-imput2' name="email-user" type="email" id="email-user">
+                                
+                                <label class='form-label2' for="">Document </label>
+                                <input class='form-imput2' name="document-user" id="document-user" required>
+                            </form>
+                            <div class="flex justify-center">
+                                <button id="btn_save_user" class="btn-secondary">
+                                    <span class="fa-solid fa-user-plus"> </span> Save user
+                                </button>
+                            </div>
+                        </div>
                         </div>
                     </div>
+                        
                      
                     <div class="modal-container" id="modal_container">
-                        <div class="modal">
+                        <div class="modal" id="modal">
                             <div id='modal_header' class="modal-header">
                                 <b><h1>Send me your comments :) </h1></b>
                             </div>
                                 <form action="" id="form" >
-                                    
                                     <label class='form-label' for="">Nombre Completo </label>
                                     <input class='form-imput' name="name" required type="text" id="name">
                                    
@@ -72,80 +92,45 @@
                                     <input class='form-imput' name="email" type="email" id="email" required>
                                     
                                     <label class='form-label' for="message">Mensaje</label>
-                                    <textarea  class='form-imput' id="message" name="message" id="" cols="45" rows="10" required></textarea>
-                                    
+                                    <textarea  class='form-imput' id="message" name="message" id="" cols="35" rows="5" required></textarea>
+                                </form> 
                                 <button id="btn-enviarMensaje">Enviar mensaje</button>
                                 <button id="btn_close">Close</button>
-                                </form>
-                            
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- columna 2/3 -->
             <div class="md:w-2/3 w-screen rounded-md">
-                <div class="p-10% flex-col">
-                    <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
-                        <h2 class="font-mono text-lg pl-8">Education</h2>
-                    </div>
-                    <div class="rounded-b-lg bg-gray-100 md:mt-0 md:m-2 m-1 p-4">
-                        <div class="p-2">
-                            <ul class="list-disc">
-                                <li><p><b>2021 - now:</b> English</p></li> 
-                                <li><p><b>2017 - now:</b> Computer engineering at Catholic University of Uruguay</p></li> 
-                                <li><p><b>2013 - 2016:</b> Accountant at Catholic University of Uruguay</p></li> 
-                            </ul>
-                        </div>
-                    </div>
+                
+                <div class="p-10 grid grid-cols-2 gap-4">
+                    <button id="btn_education" >
+                        <span> </span> Education 
+                    </button>
+                    <button id="btn_work_exp" >
+                        <span> </span> Work experience 
+                    </button>
+                    <button id="btn_skill" >
+                        <span> </span> Skills 
+                    </button>
+                    <button id="btn_languages" >
+                        <span> </span> Languages 
+                    </button>                       
+                    <button id="btn_other_info" class="col-span-2">
+                        <span> </span> Other info 
+                    </button>  
                 </div>
-                <div class="p-10% flex-col">
-                    <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
-                        <h2 class="font-mono text-lg pl-8">Skills</h2>
-                    </div>
-                    <div class="rounded-b-lg bg-gray-100 md:mt-0 md:m-2 m-1 p-4">
-                        <div class="p-2">
-                            <ul class="list-disc">
-                                <li><p><b>Programming languages: </b>C#, Python, Java, SQL</p></li>
-                                <li><p><b>Technical skills: </b>version management with Git, software development in 
-                                    PyCharm, NetBeans and Visual Studio, database management with PgAdmin, Linux 
-                                    operating system usage</p></li>
-                                <li><p><b>Soft skills: </b>team player, effective communication, self-taught, proactive</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-10% flex-col">
-                    <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
-                        <h2 class="font-mono text-lg pl-8">Work experience</h2>
-                    </div>
-                    <div class="rounded-b-lg bg-gray-100 md:mt-0 md:m-2 m-1 p-4">
-                        <div class="p-2">
-                            <ul class="list-disc">
-                                <li><p><b>2019 - now  Quanam:</b> Software development and testing in Odoo</p></li>
-                                <li><p><b>2018 - 2019 Datamatic:</b> Software development and testing in Odoo</p></li>
-                                <li><p><b>2016 - 2018 Ferres & Pike S.A.:</b> Accounting Administrative Assistant.</p></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-10% flex-col">
-                    <div class="md:p-4 md:m-2 m-1 md:mb-0 p-2 rounded-t-lg bg-gray-300">
-                        <h2 class="font-mono text-lg pl-8">Languages</h2>
-                    </div>
-                    <div class="rounded-b-lg bg-gray-100 md:mt-0 md:m-2 m-1 p-4">
-                        <div class="p-2">
-                            <ul class="list-disc">
-                                <li><p><b>English</b> (PET – Catholic University of Uruguay – 2015)</p></li>
-                                <li><p><b>Spanish</b> (native)</p></li>
-                            </ul>
-                        </div>
-                    </div>
+
+                <div class="rounded-lg bg-gray-100 bg-contain md:mt-0 md:m-10 p-10" id="info_contenido" style="display: none">
+                    
                 </div>
             </div>
         </main>
 
         <footer>
             <p>
-                Aca van las redes sociales
+                
             </p>
         </footer>
         <script src="js/index.min.js"></script>
