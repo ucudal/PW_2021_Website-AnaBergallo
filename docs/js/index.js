@@ -44,10 +44,14 @@ function sendInfo() {
         method: "POST",
         mode: 'cors',
         headers: new Headers({ "content-type": "application/json" , "Access-Control-Allow-Origin": "*"}),
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        success: function(msg) {
+            let contacto = response.cookie["PW_2021-CV_Contacto"];
+            alert (`Gracias ${contacto}`);
+        }   
     }).then((response) => { 
-        let contacto = response.cookie["PW_2021-CV_Contacto"];
-        alert (`Gracias ${contacto}`);
+        // let contacto = response.cookie["PW_2021-CV_Contacto"];
+        // alert (`Gracias ${contacto}`);
         return console.log(response);
     }).catch(err => console.log('error ', err));
 };
@@ -57,6 +61,7 @@ function getInfo(endpoint) {
         mode: "cors",
         headers: new Headers({ "content-type": "application/json" })
     }).then((response) => response.json()).then((data)=> {
+        showDivDatos();
         let texto = '';
         let encabezado = ''; 
         if (endpoint == 'experiencia-laboral') {
@@ -98,6 +103,10 @@ function getInfo(endpoint) {
 //         hideModal();
 //     }
 // });
+
+function showDivDatos() {
+    HTMLResponse.style.display = '';
+}
 
 function showModal() {
     modal_container.classList.add('show');
