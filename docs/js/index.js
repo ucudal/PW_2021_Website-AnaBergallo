@@ -47,11 +47,6 @@ function sendInfo() {
         headers: new Headers({ "content-type": "application/json" , "Access-Control-Allow-Origin": "*"}),
         body: JSON.stringify(data),
     }).then((response) => { 
-        // let contacto = document.cookie["PW_2021-CV_Contacto"];
-        console.log('COOKIE');
-        console.log(response.cookie);
-        const value = `; ${document.cookie}`;
-        console.log("value"); console.log(value);
         form_user.reset();
         // alert (`Gracias ${contacto}`);
         return console.log(response);
