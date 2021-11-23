@@ -40,20 +40,27 @@ function sendInfo() {
     let mail = email.texto;
     let data = {'nombreContacto': name, 'documento': doc, 'email': mail}; 
     fetch(`${api_url}/${save_user}`, {
+        method: "POST",
         mode: 'cors',
         headers: new Headers({ "content-type": "application/json" , "Access-Control-Allow-Origin": "*"}),
-        method : 'POST',
         body: JSON.stringify(data)
-    }).then((response) => response.json()).then((response)=> {
-        console.log(response);
+    }).then((response) => { 
+        let contacto = response.cookie["PW_2021-CV_Contacto"];
+        alert (`Gracias ${contacto}`);
+        return console.log(response);
     }).catch(err => console.log('error ', err));
 };
 
 function getInfo(endpoint) {
-    fetch(`${api_url}/${endpoint}`).then((response) => response.json()).then((data)=> {
+    fetch(`${api_url}/${endpoint}`, {
+        mode: "cors",
+        headers: new Headers({ "content-type": "application/json" })
+    }).then((response) => response.json()).then((data)=> {
         let texto = '';
         if (endpoint == 'experiencia-laboral') {
-            for (let row of data) {
+            console.log(data)
+            let experiencia = data['experiencia-laboral'];
+            for (let row of experiencia) {
                 texto += `<p><b>${row.empresa}</b> - ${row.puesto} - ${row.descripcion} - ${row.inicio} - ${row.fin}</p>`
             }   
         } else if (endpoint == 'skills') {
