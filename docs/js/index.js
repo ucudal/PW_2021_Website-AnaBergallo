@@ -32,14 +32,15 @@ btn_skill.addEventListener('click', function() {getInfo(skills)});
 btn_languages.addEventListener('click', function() {getInfo(languages)});
 btn_other_info.addEventListener('click', function() {getInfo(other_info)});
 btn_save_user.addEventListener('click', function() {sendInfo()});
-form.addEventListener('submit', function() {fixFormulario});
+btn_enviar_msj.addEventListener('click', fixFormulario);
 // form_user.addEventListener('submit', function() {sendInfo(e)});
 
 function sendInfo() {
-    let name = nombre.texto;
-    let doc = documento.texto;
-    let mail = email.texto;
+    let name = nombre.value;
+    let doc = documento.value;
+    let mail = email.value;
     let data = {'nombreContacto': name, 'documento': doc, 'email': mail}; 
+    console.log(data);
     fetch(`${api_url}/${save_user}`, {
         method: "POST",
         mode: 'cors',
@@ -115,8 +116,7 @@ function hideModal() {
     form.reset();
     modal_container.classList.remove('show');
 }
-function fixFormulario(e) {
-    e.preventDefault();
+function fixFormulario() {
     hideModal();
-    alert("Gracias por tu mensaje")
+    alert("Gracias por tu mensaje");
 }
